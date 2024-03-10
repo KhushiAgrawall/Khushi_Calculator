@@ -1,0 +1,64 @@
+//import java.io.*;
+import java.lang.*;
+//import java.lang.Math;
+import java.util.Scanner;
+
+// Driver class
+public class Calculator2
+{
+    // main function
+    public static void main(String[] args) {
+// Stores two numbers
+        double num1, num2;
+// Take input from the user
+        Scanner sc = new Scanner(System.in);
+        char choice;
+
+        do {
+            System.out.println("Enter the numbers:");
+// Take the inputs
+            num1 = sc.nextDouble();
+            num2 = sc.nextDouble();
+            System.out.println("Enter + for Addition ");
+            System.out.println("Enter - for Subtraction ");
+            System.out.println("Enter *for Multiplication ");
+            System.out.println("Enter / for Division ");
+            System.out.println("Enter X  for Exit ");
+            char op = sc.next().charAt(0);
+            double result = 0;
+            switch (op) {
+// case to add two numbers
+                case '+':
+                    result = num1 + num2;
+                    break;
+// case to subtract two numbers
+                case '-':
+                    result = num1 - num2;
+                    break;
+// case to multiply two numbers
+                case '*':
+                    result = num1 * num2;
+                    break;
+// case to divide two numbers
+                case '/':
+                    result = num1 / num2;
+                    break;
+
+                case 'X':
+                case 'x':
+                    System.out.println("Exiting the calculator. Goodbye!");
+                    return;
+
+                default:
+                    System.out.println("You entered wrong input");
+            }
+            System.out.println("The final result:");
+            System.out.println();
+// print the final result
+            System.out.println(num1 + " " + op + " " + num2 + " = " + result);
+
+            System.out.println("Do you want to perform another calculation? (Y/N)");
+            choice = sc.next().charAt(0);
+        } while (choice == 'Y' || choice == 'y');
+    }
+}
